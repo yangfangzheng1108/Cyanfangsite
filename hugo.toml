@@ -1,0 +1,8 @@
+baseURL = 'https://example.org/'
+languageCode = 'zh-CN'
+title = 'YFZ DIY 博客'
+theme = 'ananke'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
