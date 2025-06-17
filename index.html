@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品展示 | TechNova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36D399',
+                        accent: '#7C3AED',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                        'gray-medium': '#64748B'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .bg-gradient-custom {
+                background: linear-gradient(135deg, #165DFF 0%, #7C3AED 100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-cube text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold">TechNova</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="font-medium hover:text-primary transition-colors">首页</a>
+                <a href="#products" class="font-medium hover:text-primary transition-colors">产品</a>
+                <a href="#features" class="font-medium hover:text-primary transition-colors">特性</a>
+                <a href="#testimonials" class="font-medium hover:text-primary transition-colors">评价</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-colors">联系我们</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                    购买
+                </button>
+                <button class="md:hidden text-dark text-xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="pt-32 pb-20 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    创新科技产品
+                </span>
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark">
+                    探索我们的 <span class="text-primary">前沿产品</span>
+                </h1>
+                <p class="text-lg text-gray-medium mt-6 max-w-lg">
+                    TechNova 提供一系列创新产品，帮助您的业务和生活更高效、更智能。每一款产品都融合了最新技术和人性化设计。
+                </p>
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#products" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-lg flex items-center">
+                        浏览产品 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#demo" class="bg-white hover:bg-gray-50 text-dark border border-gray-200 px-8 py-3 rounded-lg font-medium transition-all hover:shadow-md flex items-center">
+                        <i class="fa fa-play-circle mr-2"></i> 观看演示
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative">
+                    <img src="https://picsum.photos/800/600?random=30" alt="产品展示" class="w-full h-auto rounded-2xl shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 flex items-center space-x-3 card-hover">
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <i class="fa fa-check text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">全球领先技术</h4>
+                            <p class="text-xs text-gray-medium">采用最先进的技术解决方案</p>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 flex items-center space-x-3 card-hover">
+                        <div class="bg-blue-100 p-3 rounded-lg">
+                            <i class="fa fa-trophy text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">国际奖项</h4>
+                            <p class="text-xs text-gray-medium">获得多项国际设计和技术奖项</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品类别 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark">
+                    产品分类
+                </h2>
+                <p class="text-gray-medium mt-4 text-lg">
+                    探索我们多样化的产品线，满足不同需求和场景
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#software" class="category-card bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-laptop text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">软件解决方案</h3>
+                    <p class="text-gray-medium text-sm mt-2">智能、高效的软件工具</p>
+                </a>
+
+                <a href="#hardware" class="category-card bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-microchip text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">硬件设备</h3>
+                    <p class="text-gray-medium text-sm mt-2">创新的智能硬件产品</p>
+                </a>
+
+                <a href="#iot" class="category-card bg-accent/10 rounded-xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-wifi text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">物联网产品</h3>
+                    <p class="text-gray-medium text-sm mt-2">连接一切的智能设备</p>
+                </a>
+
+                <a href="#services" class="category-card bg-gray-50 rounded-xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-cogs text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">技术服务</h3>
+                    <p class="text-gray-medium text-sm mt-2">专业的技术支持与服务</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    我们的产品
+                </span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark">
+                    创新产品系列
+                </h2>
+                <p class="text-gray-medium mt-4 text-lg">
+                    每一款产品都代表了我们对品质和创新的不懈追求
+                </p>
+            </div>
+
+            <!-- 软件解决方案 -->
+            <div id="software" class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <i class="fa fa-laptop text-primary mr-3"></i> 软件解决方案
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 产品卡片 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=101" alt="智能数据分析平台" class="w-full h-56 object-cover">
+                            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                新品
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">智能数据分析平台</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star-half-o text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.8</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                强大的数据分析工具，帮助企业从海量数据中获取有价值的洞察，支持智能决策。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">AI驱动</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">实时分析</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">数据可视化</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-gray-medium line-through text-sm">¥19,800</span>
+                                    <span class="text-xl font-bold ml-2">¥14,800</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=102" alt="企业资源规划系统" class="w-full h-56 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">企业资源规划系统</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">5.0</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                一体化的企业管理解决方案，整合财务、人力资源、供应链等核心业务流程。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">模块化</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">可扩展</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">云端部署</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥29,800</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=103" alt="客户关系管理系统" class="w-full h-56 object-cover">
+                            <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                畅销
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">客户关系管理系统</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star-o text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.2</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                全方位的客户管理解决方案，帮助企业优化销售流程、提升客户满意度。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">销售自动化</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">营销自动化</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">客户服务</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥18,800</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 硬件设备 -->
+            <div id="hardware" class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <i class="fa fa-microchip text-secondary mr-3"></i> 硬件设备
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 产品卡片 4 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=104" alt="智能工业传感器" class="w-full h-56 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">智能工业传感器</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star-half-o text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.7</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                高精度工业级传感器，实时监测环境参数，支持工业物联网应用。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">高精度</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">低功耗</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">长寿命</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥3,500</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 5 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=105" alt="智能安防摄像头" class="w-full h-56 object-cover">
+                            <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                畅销
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">智能安防摄像头</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                4K超高清智能安防摄像头，支持人脸识别和移动侦测，全天候保护您的安全。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">4K超高清</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">AI识别</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">夜视功能</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥1,299</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 6 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=106" alt="便携式健康监测仪" class="w-full h-56 object-cover">
+                            <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                新品
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">便携式健康监测仪</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star-o text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.1</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                多功能健康监测设备，实时监测心率、血压、血氧等多项健康指标。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">多参数监测</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">智能分析</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">移动应用</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥899</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 物联网产品 -->
+            <div id="iot" class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <i class="fa fa-wifi text-accent mr-3"></i> 物联网产品
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 产品卡片 7 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=107" alt="智能家居控制中心" class="w-full h-56 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">智能家居控制中心</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star-half-o text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.6</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                集成多种通信协议的智能家居中枢，一站式控制所有智能设备，支持语音控制。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">多协议支持</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">语音控制</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">远程访问</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥1,599</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 8 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=108" alt="智能能源管理系统" class="w-full h-56 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">智能能源管理系统</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                实时监控和管理家庭或企业能源消耗，优化用电模式，降低能源成本。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">实时监控</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">智能优化</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">节能报告</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥2,499</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片 9 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=109" alt="工业物联网网关" class="w-full h-56 object-cover">
+                            <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                畅销
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-xl font-bold">工业物联网网关</h4>
+                                <div class="flex items-center">
+                                    <div class="flex">
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star text-yellow-400"></i>
+                                        <i class="fa fa-star-half-o text-yellow-400"></i>
+                                    </div>
+                                    <span class="ml-1 text-sm font-medium">4.5</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-medium mb-6">
+                                高性能工业级物联网网关，支持多种工业协议转换和数据安全传输。
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">多协议转换</span>
+                                <span class="bg-secondary/10 text-secondary text-xs px-3 py-1 rounded-full">边缘计算</span>
+                                <span class="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">工业级设计</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xl font-bold">¥4,299</span>
+                                </div>
+                                <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-all hover:shadow-lg">
+                                    了解详情
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center justify-center bg-white hover:bg-gray-50 text-primary border border-primary/30 px-8 py-3 rounded-lg font-medium transition-all hover:shadow-md">
+                    查看全部产品 <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品特性 -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    产品优势
+                </span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark">
+                    为什么选择我们的产品
+                </h2>
+                <p class="text-gray-medium mt-4 text-lg">
+                    我们的产品结合了创新技术和用户需求，为您提供卓越的体验
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- 特性卡片 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa fa-rocket text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">创新技术</h3>
+                    <p class="text-gray-medium">
+                        我们不断投入研发，采用最新技术确保产品性能卓越，满足未来需求。
+                    </p>
+                </div>
+
+                <!-- 特性卡片 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa fa-shield text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">安全可靠</h3>
+                    <p class="text-gray-medium">
+                        我们高度重视产品安全，从设计到生产的每一个环节都严格把关，确保可靠性。
+                    </p>
+                </div>
+
+                <!-- 特性卡片 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa fa-users text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">用户体验</h3>
+                    <p class="text-gray-medium">
+                        我们的产品设计以用户为中心，确保直观易用，降低学习成本，提高工作效率。
+                    </p>
+                </div>
+
+                <!-- 特性卡片 4 -->
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa fa-cogs text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">可扩展性</h3>
+                    <p class="text-gray-medium">
+                        我们的产品设计具有良好的扩展性，支持未来功能升级和系统集成。
+                    </p>
+                </div>
+
+                <!-- 特性卡片 5 -->
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa fa-life-ring text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">专业支持</h3>
+                    <p class="text-gray-medium">
+                        我们提供全方位的技术支持，确保您在使用过程中遇到的问题能够得到及时解决。
+                    </p>
+                </div>
+
+                <!-- 特性卡片 6 -->
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa fa-leaf text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">环保节能</h3>
+                    <p class="text-gray-medium">
+                        我们关注环境可持续发展，所有产品均采用环保材料和节能设计。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    客户评价
+                </span>
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark">
+                    客户对我们的评价
+                </h2>
+                <p class="text-gray-medium mt-4 text-lg">
+                    听听我们的客户如何评价TechNova的产品和服务
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 评价卡片 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-6">
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-medium mb-6">
+                        "TechNova的智能数据分析平台彻底改变了我们处理业务数据的方式。它帮助我们发现了许多之前未被注意的业务机会，决策更加精准。"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/60/60?random=201" alt="用户头像" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">张晓明</h4>
+                            <p class="text-sm text-gray-medium">ABC科技 首席数据官</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评价卡片 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-6">
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star-half-o text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-medium mb-6">
+                        "我们公司部署了TechNova的企业资源规划系统后，业务流程变得更加高效和透明。系统的可扩展性也非常出色，能够随着我们业务的增长而轻松扩展。"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/60/60?random=202" alt="用户头像" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">李晓华</h4>
+                            <p class="text-sm text-gray-medium">未来科技 运营总监</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评价卡片 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="flex mb-6">
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-medium mb-6">
+                        "TechNova的智能家居产品系列让我的家变得更加智能和舒适。安装简单，使用方便，应用界面直观友好。他们的客户支持团队也非常专业和有耐心。"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/60/60?random=203" alt="用户头像" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">王建国</h4>
+                            <p class="text-sm text-gray-medium">智能家居爱好者</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系部分 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="bg-gradient-custom rounded-3xl overflow-hidden shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 lg:p-12 text-white">
+                        <span class="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-sm font-medium mb-4">
+                            联系我们
+                        </span>
+                        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-white">
+                            了解更多关于我们的产品
+                        </h2>
+                        <p class="text-white/80 mt-4 text-lg">
+                            无论您有任何问题或需求，我们的团队都将竭诚为您提供帮助。填写表单，我们将在24小时内与您联系。
+                        </p>
+
+                        <div class="mt-10 space-y-6">
+                            <div class="flex items-start">
+                                <div class="mt-1 mr-4 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">地址</h4>
+                                    <p class="text-white/70 mt-1">
+                                        北京市海淀区中关村科技园区8号楼<br>创新大厦15层
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="mt-1 mr-4 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">电话</h4>
+                                    <p class="text-white/70 mt-1">
+                                        +86 10 8888 7777<br>+86 10 9999 6666
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="mt-1 mr-4 w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">邮箱</h4>
+                                    <p class="text-white/70 mt-1">
+                                        info@technova.com<br>support@technova.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10">
+                            <h4 class="font-semibold text-lg mb-4">关注我们</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fa fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fa fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 lg:p-12">
+                        <h3 class="text-2xl font-bold mb-6">发送消息</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入您的姓名">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入您的邮箱">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">主题</label>
+                                <select id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors">
+                                    <option value="">请选择产品类别</option>
+                                    <option value="software">软件解决方案</option>
+                                    <option value="hardware">硬件设备</option>
+                                    <option value="iot">物联网产品</option>
+                                    <option value="services">技术服务</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">消息</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入您的需求或问题"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium transition-all hover:shadow-lg">
+                                发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fa fa-cube text-primary text-2xl"></i>
+                        <h2 class="text-xl font-bold">TechNova</h2>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        TechNova是创新科技产品的全球领先供应商，致力于通过技术创新改善人们的生活和工作方式。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">产品</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#software" class="text-gray-400 hover:text-white transition-colors">软件解决方案</a></li>
+                        <li><a href="#hardware" class="text-gray-400 hover:text-white transition-colors">硬件设备</a></li>
+                        <li><a href="#iot" class="text-gray-400 hover:text-white transition-colors">物联网产品</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">技术服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">查看全部产品</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">公司</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">新闻中心</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">加入我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">合作伙伴</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">支持</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">帮助中心</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">技术文档</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">产品更新</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">保修政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; 2025 TechNova. 保留所有权利。
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">隐私政策</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">服务条款</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie政策</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 表单提交
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感谢您的留言！我们将尽快与您联系。');
+            this.reset();
+        });
+
+        // 产品类别卡片动画
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('bg-primary/5');
+            });
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('bg-primary/5');
+            });
+        });
+    </script>
+</body>
+</html>
+    
