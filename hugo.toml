@@ -1,8 +1,8 @@
 baseURL = 'https://example.org/'
 languageCode = 'zh-CN'
-title = 'Cyanfang Official Website | Xuzhou Cyanfang E-commerce Co., Ltd.'
+title = 'Cyanfang'
 theme = 'ananke'
-
+site_name = 'Cyanfang Official Website | Xuzhou Cyanfang E-commerce Co., Ltd.'
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
