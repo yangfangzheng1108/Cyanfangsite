@@ -4,9 +4,9 @@ draft = false
 title = '第一个产品'
 +++
 
-这是一个东西，质量特别好
+这是一个东西，质量特别好啦
 
-![棒棒棒](1.png)
+![棒棒棒](.\1.png)
 This is **bold** text, and this is *emphasized* text.
 
 Visit the [Hugo](https://gohugo.io) website!
