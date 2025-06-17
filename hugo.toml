@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'zh-CN'
-title = 'YFZ DIY 博客'
+title = 'Cyanfang Official Website | Xuzhou Cyanfang E-commerce Co., Ltd.'
 theme = 'ananke'
 
 [caches]
