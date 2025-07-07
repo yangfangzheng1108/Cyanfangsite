@@ -4,7 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyanfang Official Website | Xuzhou Cyanfang E-commerce Co., Ltd.</title>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMTY1REZGIiBkPSJNMzg0IDM2MFYxNTJjMCAwLTEyOC0xMTItMjU2LTEwOUwzMjAgMTYwYy0xNiAxMy0zMiAzNC0zMiA1NnYxNjBjMCAyMiAxOCA0MCA0MCA0MGgxOTJjMjIgMCA0MC0xOCA0MC00MHoiLz48L3N2Zz4=">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // 动态设置Font Awesome图标为favicon
+        function setFaviconWithFontAwesome() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+
+            // 设置背景透明
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 设置字体 (Font Awesome)
+            ctx.font = '24px FontAwesome';
+            ctx.fillStyle = '#165DFF'; // primary颜色
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // 绘制立方体图标 (Unicode: f1b2)
+            ctx.fillText('\uf1b2', canvas.width / 2, canvas.height / 2);
+
+            // 设置为favicon
+            const link = document.getElementById('favicon') || document.createElement('link');
+            link.id = 'favicon';
+            link.rel = 'icon';
+            link.href = canvas.toDataURL('image/png');
+            document.head.appendChild(link);
+        }
+
+        // 页面加载完成后执行
+        window.addEventListener('load', setFaviconWithFontAwesome);
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -81,7 +113,7 @@
                     创新科技产品
                 </span>
                 <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark">
-                    探索我们的 <span class="text-primary">前沿产品</span>
+                    这是一个测试标题，，，，，，，，，探索我们的 <span class="text-primary">前沿产品</span>
                 </h1>
                 <p class="text-lg text-gray-medium mt-6 max-w-lg">
                     TechNova 提供一系列创新产品，帮助您的业务和生活更高效、更智能。每一款产品都融合了最新技术和人性化设计。
